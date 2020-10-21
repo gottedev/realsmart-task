@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 import { Scrollbars } from "react-custom-scrollbars";
 
 const CardStyles = styled.div`
@@ -34,5 +35,10 @@ function Card({ children, cardId }) {
     </CardStyles>
   );
 }
+
+Card.propTypes = {
+  children: PropTypes.node.isRequired,
+  cardId: PropTypes.string.isRequired,
+};
 
 export default Card;

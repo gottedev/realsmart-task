@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 import { RiAddCircleLine } from "react-icons/ri";
 import { IoMdRemoveCircleOutline } from "react-icons/io";
 
@@ -29,6 +30,18 @@ function CardItem({ content, id, handleMove, index, cardId }) {
       </CardItemContentWrapper>
     </CardItemStyles>
   );
+}
+
+CardItem.propTypes = {
+  content: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+  cardId: PropTypes.string,
+  handleMove: PropTypes.func.isRequired,
+};
+
+CardItem.defaultProps ={
+  cardId:''
 }
 
 export default CardItem;
