@@ -1,27 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Card, CardItem } from "./components";
+import { arraySwapper, getItems } from "./assets";
 import "./App.css";
-
-const getItems = (count, offset = 0) =>
-  Array.from({ length: count }, (v, k) => k).map((k) => ({
-    id: `item-${k + offset}`,
-    content: `item ${k + offset}`,
-  }));
 
 const AppStyles = styled.div`
   display: flex;
   margin: 4rem;
   justify-content: space-around;
 `;
-
-const arraySwapper = (source, destination, index) => {
-  const sourceClone = Array.from(source);
-  const destClone = Array.from(destination);
-  const [removed] = sourceClone.splice(index, 1);
-  destClone.splice(index, 0, removed);
-  return [sourceClone, destClone];
-};
 
 function App() {
   const [unUsed, setUnUsed] = useState(getItems(101));
