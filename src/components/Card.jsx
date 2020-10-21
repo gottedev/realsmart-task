@@ -4,12 +4,11 @@ import PropTypes from 'prop-types';
 import { Scrollbars } from "react-custom-scrollbars";
 
 const CardStyles = styled.div`
-  width: 450px;
   padding: 20px;
   background-color: black;
   min-height: 500px;
   max-height: 500px;
-  overflow-y: auto;
+  overflow: hidden;
   border-radius: 0.2rem;
   box-shadow: 0 2px 5px red;
 `;

@@ -6,8 +6,28 @@ import "./App.css";
 
 const AppStyles = styled.div`
   display: flex;
-  margin: 4rem;
+  width: 100vw;
   justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  flex-shrink: 1;
+  position: absolute;
+  top: 10%;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const CardWrapper = styled.div`
+  width: 30%;
+  max-width: 500px;
+  margin: 2rem 0rem;
+  @media (max-width: 1024px) {
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 function App() {
@@ -32,7 +52,7 @@ function App() {
 
   return (
     <AppStyles>
-      <div>
+      <CardWrapper>
         <h2>Un-Used List</h2>
         <Card cardId="card-1">
           {unUsed.map((item, index) => (
@@ -45,8 +65,8 @@ function App() {
             />
           ))}
         </Card>
-      </div>
-      <div>
+      </CardWrapper>
+      <CardWrapper>
         <h2>Used List</h2>
         <Card cardId="card-2">
           {used.map((item, index) => (
@@ -59,7 +79,7 @@ function App() {
             />
           ))}
         </Card>
-      </div>
+      </CardWrapper>
     </AppStyles>
   );
 }
